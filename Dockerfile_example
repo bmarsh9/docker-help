@@ -1,0 +1,21 @@
+# install base
+FROM ubuntu
+
+# update the operating system
+RUN apt-get update --fix-missing
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+RUN apt install -y python3-pip nano git net-tools sudo
+
+# copy the folder to the container
+#ADD . /folder
+
+# Define working directory
+#WORKDIR /folder
+
+#RUN
+
+# expose tcp port 5000
+EXPOSE 5000
+
+# default command
+CMD ["/bin/bash"]
