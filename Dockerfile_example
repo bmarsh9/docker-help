@@ -1,11 +1,12 @@
 #docker build -t dev .
+#docker run -it dev bash
 # install base
 FROM ubuntu
 
 # update the operating system
 RUN apt-get update --fix-missing
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
-RUN apt install -y python3-pip nano git net-tools sudo
+RUN apt install -y python3-pip nano git net-tools sudo curl
 
 # copy the folder to the container
 #ADD . /folder
